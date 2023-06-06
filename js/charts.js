@@ -1,4 +1,4 @@
-const girls = {
+export const girls = {
     weight: {
         0: [2.0, 2.4, 2.8, 3.2, 3.7, 4.2, 4.8],
         1: [2.7, 3.2, 3.6, 4.2, 4.8, 5.5, 6.2],
@@ -191,7 +191,7 @@ const girls = {
 
     }
 }
-const boys = {
+export const boys = {
     weight: {
         0: [2.1, 2.5, 2.9, 3.3, 3.9, 4.4, 5.0],
         1: [2.9, 3.4, 3.9, 4.5, 5.1, 5.8, 6.6],
@@ -384,4 +384,3 @@ const boys = {
 
     }
 }
-console.log(girls.weight[10])
