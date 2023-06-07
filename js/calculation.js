@@ -9,7 +9,6 @@ const resultados = document.querySelector(".resultado")
 resultados.hidden = true
 
 let gender = girls
-let currentChart = ""
 
 radio[0].checked = true
 
@@ -22,26 +21,20 @@ options.addEventListener("click", (evento) => {
         gender = boys;
     }
 })
-charts.addEventListener("click", e => currentChart = e.target.value)
-
 
 window.addEventListener("click", createElement)
 window.addEventListener("touchstart", createElement)
 options.addEventListener("click", createElement)
 options.addEventListener("touchstart", createElement)
-radio.addEventListener("click", createElement)
-radio.addEventListener("touchstart", createElement)
 charts.addEventListener("click", createElement)
 charts.addEventListener("touchstart", createElement)
-
-
-
 
 
 function createElement() {
     const years = (document.getElementById("anos").value)
     const months = (document.getElementById("meses").value)
     const totalMonths = ((Number(years) * 12) + Number(months))
+    const currentChart = charts.value
     if (!years && !months) {
         resultados.innerHTML = ''
         resultados.hidden = true
