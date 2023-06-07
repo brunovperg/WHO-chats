@@ -1,9 +1,12 @@
 import { boys, girls } from "./charts.js";
 
 const radio = document.querySelectorAll("input[type='radio']");
+const numbers = document.querySelectorAll("input[type='number']")
 const options = document.getElementById("options");
 const charts = document.getElementById("chart")
 const resultados = document.querySelector(".resultado")
+
+const choices = [window, options, charts, numbers]
 
 resultados.hidden = true
 
@@ -23,8 +26,9 @@ options.addEventListener("click", (evento) => {
 })
 charts.addEventListener("click", e => currentChart = e.target.value)
 
-window.addEventListener("click", e => {
-    
+
+choices.forEach(e => e.addEventListener("click", e => {
+
     const years = (document.getElementById("anos").value)
     const months = (document.getElementById("meses").value)
     const totalMonths = ((Number(years) * 12) + Number(months))
@@ -64,4 +68,4 @@ window.addEventListener("click", e => {
     }
 
 })
-
+)
