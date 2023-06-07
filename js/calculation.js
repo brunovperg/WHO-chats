@@ -6,8 +6,6 @@ const options = document.getElementById("options");
 const charts = document.getElementById("chart")
 const resultados = document.querySelector(".resultado")
 
-const choices = [window, options, charts, numbers]
-
 resultados.hidden = true
 
 let gender = girls
@@ -27,8 +25,20 @@ options.addEventListener("click", (evento) => {
 charts.addEventListener("click", e => currentChart = e.target.value)
 
 
-choices.forEach(e => e.addEventListener("click touchstart", e => {
+window.addEventListener("click", createElement)
+window.addEventListener("touchstart", createElement)
+options.addEventListener("click", createElement)
+options.addEventListener("touchstart", createElement)
+radio.addEventListener("click", createElement)
+radio.addEventListener("touchstart", createElement)
+charts.addEventListener("click", createElement)
+charts.addEventListener("touchstart", createElement)
 
+
+
+
+
+function createElement() {
     const years = (document.getElementById("anos").value)
     const months = (document.getElementById("meses").value)
     const totalMonths = ((Number(years) * 12) + Number(months))
@@ -66,6 +76,5 @@ choices.forEach(e => e.addEventListener("click touchstart", e => {
         }
 
     }
+}
 
-})
-)
