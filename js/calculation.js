@@ -3,16 +3,14 @@ import { boys, girls } from "./charts.js";
 const radio = document.querySelectorAll("input[type='radio']");
 const options = document.getElementById("options");
 const charts = document.getElementById("chart")
-const years =Number(document.getElementById("anos").value)
-const months = Number(document.getElementById("meses").value)
-const totalMonths = (years * 12) + months
+const resultados = document.querySelector(".resultado")
 
-let gender = ""
+resultados.hidden = true
+
+let gender = girls
 let currentChart = ""
 
-radio.forEach((element) => {
-    element.checked = false;
-});
+radio[0].checked = true
 
 charts.selectedIndex = -1;
 
@@ -25,6 +23,45 @@ options.addEventListener("click", (evento) => {
 })
 charts.addEventListener("click", e => currentChart = e.target.value)
 
-window.addEventListener("click", e => console.log())
+window.addEventListener("click", e => {
+    
+    const years = (document.getElementById("anos").value)
+    const months = (document.getElementById("meses").value)
+    const totalMonths = ((Number(years) * 12) + Number(months))
+    if (!years && !months) {
+        resultados.innerHTML = ''
+        resultados.hidden = true
+    } else {
+        resultados.innerHTML = ''
+        try {
+            resultados.innerHTML = `
+                <tr>
+                <th class="th-1">-3</th>
+                <th class="th-2">-2</th>
+                <th class="th-3">-1</th>
+                <th class="th-4">0</th>
+                <th class="th-5">1</th>
+                <th class="th-6">2</th>
+                <th class="th-7">3</th>
+                </tr>
+                <tr>
+                <td class="td-1">${gender[currentChart][totalMonths][0]}</td>
+                <td class="td-2">${gender[currentChart][totalMonths][1]}</td>
+                <td class="td-3">${gender[currentChart][totalMonths][2]}</td>
+                <td class="td-4">${gender[currentChart][totalMonths][3]}</td>
+                <td class="td-5">${gender[currentChart][totalMonths][4]}</td>
+                <td class="td-6">${gender[currentChart][totalMonths][5]}</td>
+                <td class="td-7">${gender[currentChart][totalMonths][6]}</td>
+                </tr>
+`
+            resultados.hidden = false
+        } catch {
+            resultados.hidden = true
 
-console.log(totalMonths)
+            resultados.innerHTML = ''
+        }
+
+    }
+
+})
+

@@ -29,15 +29,15 @@
                     <input type="radio" name="tipo" class="boys" id="boys" />
                     <label for="boys" class="boys"> Menino </label>
                 </div>
-                    <br><br>
-                    <label for="idade">Idade da criança:</label>
-                    <br>
-                    <input type="number" name="anos" id="anos">Anos e
-                    <input type="number" name="meses" id="meses" max="11">Meses
+                <br><br>
+                <label for="idade">Idade da criança:</label>
+                <br>
+                <input type="number" name="anos" id="anos"> Anos e
+                <input type="number" name="meses" id="meses" max="11"> Meses
             </div>
             <br>
             <div id="charts">
-                <label for="chart">O Que Deseja Analizar:</label>
+                <label>O Que Deseja Analizar:</label>
                 <br>
                 <select name="chart" id="chart">
                     <option value="weight">Peso</option>
@@ -47,19 +47,16 @@
             </div>
 
         </div>
+        <div class="divisor-1"></div>
+        <div class="resultados">
+            <table class="resultado">
+            </table>
+        </div>
     </div>
-    <div class="divisor-1"></div>
-    <form>
 
-    </form>
-    <div class="divisor-1"></div>
-    <button type="submit" class="calcular color-mode-1" id="calcular">
-        <span class="color-mode-1">Calcular</span>
-    </button>
-    <div id="resultados"></div>
-    </div>
-    <script defer src="./js/calculation.js"></script>
+    <script defer src="./js/calculation.js" type="module"></script>
     <script defer src="./js/charts.js" type="module"></script>
-    <script defer src="./js/color-change.js" type="module"></script>
+    <script defer src="./js/color-change.js"></script>
 </body>
+
 </html>
