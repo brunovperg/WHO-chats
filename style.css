@@ -99,9 +99,6 @@ select {
     text-align: center;
 }
 
-.resultados {
-    
-}
 table, th, td {
   border: 1px solid black;
   vertical-align: middle;
@@ -131,6 +128,12 @@ padding: 1rem 0 1rem 0;
 }
 .th-4, .td-4 {
     background-color: rgba(0, 128, 0, 0.616);
+}
+
+span.texto-resultado {
+    padding: 1rem 0 1rem 0;
+    display: block;
+    text-align: center;
 }
 /* REMOVER SETAS DE NUMERO Chrome, Safari, Edge, Opera */
 

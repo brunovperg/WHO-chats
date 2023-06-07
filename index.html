@@ -22,18 +22,18 @@
                 <div class="title">CALCULADORA Z-SCORE</div>
                 <label for="">Selecione uma opção</label><br />
                 <div id="options">
-                    <input type="radio" name="tipo" class="girls" id="girls" />
+                    <input  type="radio" name="tipo" class="girls" id="girls" dataname="Menina"/>
                     <label for="girls" class="girls">
                         Menina
                     </label>
-                    <input type="radio" name="tipo" class="boys" id="boys" />
+                    <input  type="radio" name="tipo" class="boys" id="boys" dataname="Menino"/>
                     <label for="boys" class="boys"> Menino </label>
                 </div>
                 <br><br>
                 <label for="idade">Idade da criança:</label>
                 <br>
-                <input type="number" name="anos" id="anos"> Anos e
-                <input type="number" name="meses" id="meses" max="11"> Meses
+                <input value="0" type="number" name="anos" id="anos"> Anos e
+                <input value="0" type="number" name="meses" id="meses" max="11"> Meses
             </div>
             <br>
             <div id="charts">
@@ -49,6 +49,7 @@
         </div>
         <div class="divisor-1"></div>
         <div class="resultados">
+            <span class="texto-resultado"></span>
             <table class="resultado">
             </table>
         </div>
