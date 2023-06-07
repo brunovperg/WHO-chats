@@ -27,7 +27,7 @@ options.addEventListener("click", (evento) => {
 charts.addEventListener("click", e => currentChart = e.target.value)
 
 
-choices.forEach(e => e.addEventListener("click", e => {
+choices.forEach(e => e.addEventListener("click touchstart", e => {
 
     const years = (document.getElementById("anos").value)
     const months = (document.getElementById("meses").value)
