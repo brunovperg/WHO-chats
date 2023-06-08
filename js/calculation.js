@@ -53,14 +53,21 @@ function createElement() {
     } else {
         resultados.innerHTML = ''
         try {
-            
             textoResultado.innerHTML = `
-           <strong> ${charts.options[charts.selectedIndex].text}</strong> para <strong>${checkedRadio.attributes.dataname.value}</strong> de ${years} anos e ${months} meses
+           <strong> ${charts.options[charts.selectedIndex].text}</strong> <strong id="unit"></strong> para <strong>${checkedRadio.attributes.dataname.value}</strong> de ${years} anos e ${months} meses
             `
+            const unit = document.getElementById("unit");
+            if (charts.options[charts.selectedIndex].text == 'Peso') {
+                unit.innerHTML = "(Kg)"
+
+            } else {
+                unit.innerHTML = '(cm)'
+            }
+
         } catch {
-            
+
         }
-        try{
+        try {
             resultados.innerHTML = `
                 <tr>
                 <th class="th-1">-3</th>
@@ -82,8 +89,8 @@ function createElement() {
                 </tr>
 `
             resultados.hidden = false
-        } catch (err) {
-            
+        } catch {
+
             resultados.hidden = true
             textoResultado.innerHTML = 'Selecione uma idade entre 0-5 anos'
             resultados.innerHTML = ''

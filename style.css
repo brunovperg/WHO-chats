@@ -95,6 +95,10 @@ div#charts {
     text-align: center;
 }
 
+#chart{
+    width: 10rem;
+}
+
 select {
     text-align: center;
 }
