@@ -36,20 +36,31 @@ charts.addEventListener("change", createElement)
 
 function createElement() {
     const checkedRadio = document.querySelector("input[type='radio']:checked")
-    console.log(checkedRadio.attributes.dataname.value)
-    const years = (document.getElementById("anos").value)
-    const months = (document.getElementById("meses").value)
+    let years = (document.getElementById("anos").value)
+    let months = (document.getElementById("meses").value)
     const totalMonths = ((Number(years) * 12) + Number(months))
     const currentChart = charts.value
+    if (years == '') {
+        years = 0
+    }
+    if (months == '') {
+        months = 0
+    }
     if (!years && !months) {
         resultados.innerHTML = ''
+        textoResultado.innerHTML = ''
         resultados.hidden = true
     } else {
         resultados.innerHTML = ''
         try {
+            
             textoResultado.innerHTML = `
            <strong> ${charts.options[charts.selectedIndex].text}</strong> para <strong>${checkedRadio.attributes.dataname.value}</strong> de ${years} anos e ${months} meses
             `
+        } catch {
+            
+        }
+        try{
             resultados.innerHTML = `
                 <tr>
                 <th class="th-1">-3</th>
@@ -71,9 +82,10 @@ function createElement() {
                 </tr>
 `
             resultados.hidden = false
-        } catch {
+        } catch (err) {
+            
             resultados.hidden = true
-
+            textoResultado.innerHTML = 'Selecione uma idade entre 0-5 anos'
             resultados.innerHTML = ''
         }
 
