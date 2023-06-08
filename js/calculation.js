@@ -6,6 +6,7 @@ const options = document.getElementById("options");
 const charts = document.getElementById("chart")
 const resultados = document.querySelector(".resultado")
 const textoResultado = document.querySelector(".texto-resultado")
+const form = document.getElementById("form")
 
 
 resultados.hidden = true
@@ -24,9 +25,11 @@ options.addEventListener("click", (evento) => {
     }
 })
 
+form.addEventListener("submit", createElement)
 window.addEventListener("click", createElement)
 window.addEventListener("touchstart", createElement)
 options.addEventListener("click", createElement)
+// numbers.forEach(ele => ele.addEventListener("input", createElement))
 options.addEventListener("touchstart", createElement)
 charts.addEventListener("click", createElement)
 charts.addEventListener("touchstart", createElement)
@@ -38,8 +41,14 @@ function createElement() {
     const checkedRadio = document.querySelector("input[type='radio']:checked")
     let years = (document.getElementById("anos").value)
     let months = (document.getElementById("meses").value)
+    numbers.forEach(ele => ele.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            createElement()
+        }
+    }))
     const totalMonths = ((Number(years) * 12) + Number(months))
     const currentChart = charts.value
+    
     if (years == '') {
         years = 0
     }

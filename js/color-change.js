@@ -29,3 +29,4 @@ colorModeButton.addEventListener('click', () => {
         body.classList.add('color-mode-1');
     }
 })
+
