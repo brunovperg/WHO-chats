@@ -63,7 +63,7 @@ function createElement() {
         resultados.innerHTML = ''
         try {
             textoResultado.innerHTML = `
-           <strong> ${charts.options[charts.selectedIndex].text}</strong> <strong id="unit"></strong> para <strong>${checkedRadio.attributes.dataname.value}</strong> de ${years} anos e ${months} meses
+           <strong> ${charts.options[charts.selectedIndex].text}</strong> <strong id="unit"></strong> para <strong>${checkedRadio.attributes.dataname.value}</strong> de<br>${years} anos e ${months} meses
             `
             const unit = document.getElementById("unit");
             if (charts.options[charts.selectedIndex].text == 'Peso') {
